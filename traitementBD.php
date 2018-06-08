@@ -83,7 +83,7 @@ function distanceEuclidienne($vector1, $vector2)
     				if($donnees['classe']=="malade"){
     					$nM++;
     				}
-    				elseif ($donnees['classe']=="sein") {
+    				elseif ($donnees['classe']=="sain") {
     					$nS++;
     				}
     			}	
@@ -98,7 +98,7 @@ function distanceEuclidienne($vector1, $vector2)
 		if($nM>$nS)
 			$cl="malade";
 		else
-			$cl="sein";
+			$cl="sain";
 		
 		
 		return $cl;
