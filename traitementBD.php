@@ -3,10 +3,11 @@
 
 
 
-    //connexion à la base de données
+	//connexion à la base de données
+	
 try 
 {
-$bdd = new PDO('mysql:host=localhost;dbname=projettutore;charset=utf8', 'root', '');
+$bdd = new PDO('mysql:host=localhost;dbname=ghrv;charset=utf8', 'root', 'root');
 }
 catch (Exception $e){
 	echo "erreur";
@@ -65,7 +66,7 @@ function distanceEuclidienne($vector1, $vector2)
 // classification
     function classification($vectorPlusProches,$nombreClasse){
     	try{
-    		$bdd = new PDO('mysql:host=localhost;dbname=projettutore;charset=utf8', 'root', '');
+    		$bdd = new PDO('mysql:host=localhost;dbname=ghrv;charset=utf8', 'root', 'root');
     	}
     	catch (Exception $e){
     		 die('Erreur : ' . $e->getMessage());

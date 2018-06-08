@@ -15,8 +15,8 @@ catch(Exception $e)
 $req = $bdd->prepare('INSERT INTO patient (nom, prenom,naissance,tel) VALUES(?,?,?,?)');
 $req->execute(array($_POST['nom'], $_POST['prenom'],$_POST['naissance'],$_POST['tel']));
 
-// Redirection du visiteur vers la page du minich
+/*Redirection du visiteur vers la page du minich
 echo "<div class='alert alert-danger'> Utilisateur a été bien enregistré!</div>";
-header('Location: index.php');
-
+header('Location: index.html');
+*/
 ?>
