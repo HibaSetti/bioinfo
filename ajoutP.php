@@ -4,27 +4,39 @@
 	<title>Nouveau Patient</title>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-   
+	
 </head>
 <body>
-	<div class="container">
-		<form method="post" action="forme_action.php">
-        <div class="row">
-			<div class="col">
-			  <input type="text" name="nom" class="form-control" placeholder="Nom" >
+<div class="page">	
+			<div class="container">
+				<div class="home">
+			     <a class="btn btn-primary" href="index.html" role="button">Accueil</a>			
+                </div>		
+		<div id="form-main">
+		<div id="form-div">
+			<form class="form" id="form1" method="post" action="forme_action.php">
+			
+			<p class="name">
+				<input name="nom" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
+			</p>
+			<p class="name">
+				<input name="prenom" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="prenom" id="name" />
+			</p>
+			<p class="email">
+				<input name="naissance" type="date" class="validate[required,custom[email]] feedback-input" id="email" placeholder="date de naissance" />
+			</p>
+			<p class="name">
+				<input name="tel" type="number" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
+			</p>
+			
+			<div class="submit">
+				<input type="submit" value="ajouter" id="button-blue"/>
+				<div class="ease"></div>
 			</div>
-			<div class="col">
-			 <input  type="text" name="prenom" class="form-control" placeholder="Prenom">
-            </div>
-       </div> 
-			<input type="date" name="naissance"><br>
-			<input type="number" name="tel"><br>
-			<input type="submit" value="Valider" />
-
- 
-	</form>
+			</form>
+		</div>
+			</div>
+			
 </div>
 
 </body>

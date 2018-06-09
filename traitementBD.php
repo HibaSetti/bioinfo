@@ -147,7 +147,7 @@ $distances= array();
 $identifiant=array();
 $reponse = $bdd->query('SELECT * FROM dataset');
 
-//parcourir la base de données ligne par ligne et remplissage du tableau distances 
+//parcourir la base de données ligne par ligne et remplir le tableau distances 
 $i=0;
 while ($donnees = $reponse->fetch())
 {
@@ -188,6 +188,7 @@ $nais=$_POST['naissance'];
 $str=getObservation(1,$distances,$identifiant,2);
 
 $reponse = $bdd->query('SELECT * FROM patient ');
+$identif=0;
 while ($donnees = $reponse->fetch())
 {
 	if($donnees['nom']==$name AND $donnees['prenom']==$pren AND $donnees['naissance']==$nais)
@@ -200,7 +201,7 @@ $reponse->closeCursor();
 echo getObservation(1,$distances,$identifiant,2);
 
 $req = $bdd->prepare('INSERT INTO evaluation (idPatient,nom,prenom,SoJ1,DoJ1,SoJ2,DoJ2,SoJ3,DoJ3,SoJ4,DoJ4,SoJ5,DoJ5,SoJ6,DoJ6,SoJ7,DoJ7,observation) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
-$req->execute(array($identif,$_POST['nom'], $_POST['prenom'],$vecteur[0],$vecteur[1],$vecteur[2],$vecteur[3],$vecteur[4],$vecteur[5],$vecteur[6],$vecteur[7],$vecteur[8],$vecteur[9],$vecteur[10],$vecteur[11],$vecteur[12],$vecteur[13],getObservation(1,$distances,$identifiant,2)));
-
+$req = $bdd->prepare('INSERT INTO evaluation (idPatient,nom,prenom,SoJ1,DoJ1,SoJ2,DoJ2,SoJ3,DoJ3,SoJ4,DoJ4,SoJ5,DoJ5,SoJ6,DoJ6,SoJ7,DoJ7,observation) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
+$req->execute(array($identif,$_POST['nom'], $_POST['prenom'],$newInformation[0],$newInformation[1],$newInformation[2],$newInformation[3],$newInformation[4],$newInformation[5],$newInformation[6],$newInformation[7],$newInformation[8],$newInformation[9],$newInformation[10],$newInformation[11],$newInformation[12],$newInformation[13],getObservation(1,$distances,$identifiant,2)));
 
 ?>
